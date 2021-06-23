@@ -84,7 +84,6 @@ const TextInputMask = forwardRef<Handles, TextInputMaskProps>(({
           value={maskedValue}
           multiline={primaryFormat && Platform.OS === 'ios' ? false : multiline}
           onChangeText={async (masked) => {
-            setMaskedValue(masked)
             if (primaryFormat) {
               const unmasked = await unmask(primaryFormat, masked, true)
               onChangeText?.(masked, unmasked)
